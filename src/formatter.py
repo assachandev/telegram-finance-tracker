@@ -86,9 +86,9 @@ def format_recent(rows: list[dict]) -> str:
         except ValueError:
             date_str = row["date"]
         amount_str = f"{sign}{CURRENCY}{row['amount']:,.0f}"
-        lines.append(f"<code>{i:>2}</code>  {date_str}  {type_icon} {row['category']:<12}  {method}  {amount_str}")
+        lines.append(f"<code>{i:>2}  {date_str}  {type_icon} {row['category']:<12}  {method}  {amount_str}</code>")
         if row.get("note"):
-            lines.append(f"          <i>{row['note']}</i>")
+            lines.append(f"    <i>{row['note']}</i>")
     return "\n".join(lines)
 
 
